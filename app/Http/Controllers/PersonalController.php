@@ -16,7 +16,10 @@ class PersonalController extends Controller
         return view('personal.create');
     }
 
-    public function show($personal){
+    public function show($id){
+
+        $personal = personal::find($id); //Recupero todo lo del ID
+        
         //return view('cursos.show',['curso'=> $curso]);
         return view('personal.show' , compact('personal'));
     }

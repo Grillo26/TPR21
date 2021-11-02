@@ -27,6 +27,8 @@ class PersonalFactory extends Factory
             'nombre_personal' => $this-> faker->company(),
             'telefono_personal' => $this-> faker->phoneNumber(),
             'direccion_personal' => $this-> faker->streetAddress(),
+            'id_tipo' => rand(1,4),
+            'id_turno' => rand(1,3),
             'created_at' => $this-> faker->dateTime,
             'updated_at' => $this-> faker->dateTime,
         ];

@@ -13,7 +13,7 @@ Route::get('cursos/{curso}', [CursoController::class, 'show']);
 
 Route::get('personal', [PersonalController::class, 'index'])->name('personal.index');
 Route::get('personal/create', [PersonalController::class, 'create'])->name('personal.create');
-Route::get('personal/{personal}', [PersonalController::class, 'show'])->name('personal.show');
+Route::get('personal/{id}', [PersonalController::class, 'show'])->name('personal.show');
 
 
 

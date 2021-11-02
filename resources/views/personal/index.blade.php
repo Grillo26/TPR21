@@ -7,7 +7,9 @@
     <a href="{{route('personal.create')}}">Añadir Personal</a>
     <ul>
         @foreach ($personal as $persona)
-        <li>{{$persona->nombre_personal}}</li>
+        <li>
+            <a href="{{route('personal.show', $persona->id)}}"> {{$persona->nombre_personal}} </a> <!-- $persona-> Lista de datos en BD-->
+        </li>
         @endforeach
     </ul>
     {{$personal->links()}}
