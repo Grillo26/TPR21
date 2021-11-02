@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\personal;
+use App\Models\insumo;
+use Database\Factories\InsumoFactory;
 use Illuminate\Database\Seeder;
 
-class PersonalSeeder extends Seeder
+class InsumoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,6 @@ class PersonalSeeder extends Seeder
      */
     public function run()
     {
-        personal::factory(50)->create();
+        insumo::factory(400)->create();
     }
 }

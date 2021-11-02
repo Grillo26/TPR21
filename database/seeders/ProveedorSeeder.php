@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\personal;
+use App\Models\proveedor;
 use Illuminate\Database\Seeder;
 
-class PersonalSeeder extends Seeder
+class ProveedorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class PersonalSeeder extends Seeder
      */
     public function run()
     {
-        personal::factory(50)->create();
+        proveedor::factory(50)->create();
     }
 }
