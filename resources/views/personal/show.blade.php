@@ -3,7 +3,7 @@
 @section('title', 'Persona '.$personal->nombre_personal)
     
 @section('content')
-    <h1>Bienvenido {{$personal->nombre_personal}}</h1>
+    <h1>{{$personal->nombre_personal}}</h1>
     <a href="{{route('personal.index')}}">Volver</a>
     <p><strong>Telefono: </strong>{{$personal->telefono_personal}}</p>
     <p><strong>Dirección: </strong>{{$personal->direccion_personal}}</p>

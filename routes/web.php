@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
@@ -14,6 +15,10 @@ Route::get('cursos/{curso}', [CursoController::class, 'show']);
 Route::get('personal', [PersonalController::class, 'index'])->name('personal.index');
 Route::get('personal/create', [PersonalController::class, 'create'])->name('personal.create');
 Route::get('personal/{id}', [PersonalController::class, 'show'])->name('personal.show');
+
+Route::get('cliente',[ClienteController::class,'index'])->name('cliente.index');
+Route::get('cliente/create', [ClienteController::class, 'create'])->name('cliente.create');
+Route::get('cliente/{id}', [ClienteController::class, 'show'])->name('cliente.show');
 
 
 
