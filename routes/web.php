@@ -11,9 +11,9 @@ Route::get('cursos', [CursoController::class, 'index']);
 Route::get('cursos/create', [CursoController::class, 'create']);
 Route::get('cursos/{curso}', [CursoController::class, 'show']);
 
-Route::get('personal', [PersonalController::class, 'index']);
-Route::get('personal/create', [Personal::class, 'create']);
-Route::get('personal/{personal}', [PersonalController::class, 'show']);
+Route::get('personal', [PersonalController::class, 'index'])->name('personal.index');
+Route::get('personal/create', [PersonalController::class, 'create'])->name('personal.create');
+Route::get('personal/{personal}', [PersonalController::class, 'show'])->name('personal.show');
 
 
 
