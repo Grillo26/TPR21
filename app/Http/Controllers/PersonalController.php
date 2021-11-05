@@ -16,6 +16,16 @@ class PersonalController extends Controller
         return view('personal.create');
     }
 
+    public function store(Request $request){
+        $personal = new personal();
+        $personal->nombre_personal = $request->nombre;
+        $personal->telefono_personal = $request->telefono;
+        $personal->direccion_personal = $request->direccion;
+        $personal->id_tipo = $request->tipo;
+        $personal->id_turno = $request->turno;
+        $personal->save();
+    }
+
     public function show($id){
 
         $personal = personal::find($id); //Recupero todo lo del ID
