@@ -5,6 +5,7 @@
 @section('content')
     <h1>Lista del Personal Registrado</h1>
     <a href="{{route('personal.create')}}">Añadir Personal</a>
+    <br>
     <ul>
         @foreach ($personal as $persona)
         <li>

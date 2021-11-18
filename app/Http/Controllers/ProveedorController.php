@@ -21,6 +21,22 @@ class ProveedorController extends Controller
         $proveedor->telefono_proveedor = $request->telefono;
         $proveedor->email = $request->email;
         $proveedor->save();
+
+        return redirect()->route('proveedor.show', $proveedor);
+    }
+
+    public function edit(proveedor $proveedor){
+        return view('proveedor.edit', compact('proveedor'));
+    }
+
+    public function update(proveedor $proveedor, Request $request){
+        $proveedor->nombre_proveedor = $request->nombre;
+        $proveedor->direccion_proveedor = $request->direccion;
+        $proveedor->telefono_proveedor = $request->telefono;
+        $proveedor->email = $request->email;
+        $proveedor->save();
+
+        return redirect()->route('proveedor.show', $proveedor);
     }
     public function show($id){
         $proveedor = proveedor::find($id); //Recupera de la Base de Datos

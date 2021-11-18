@@ -1,20 +1,19 @@
 @extends('layouts.plantilla')
 
-@section('title', 'PersonalCreate')
+@section('title', 'EditarPersonal')
     
 @section('content')
-    <h1>Aquí crearas Personal</h1>
+    <h1>Editar Personal</h1>
 
-    <form action="{{route('personal.store')}}" method="POST">
+    <form action="{{route('personal.update', $personal)}}" method="POST">
     @csrf
+    @method('put')
 
     <label>
         Nombre: 
         <br>
-        <input type="text" name="nombre" value="{{old('nombre')}}">
+        <input type="text" name="nombre" value="{{old('nombre', $personal->nombre_personal)}}">
     </label>
-
-    <!--Muestra mensaje de error si no esta lleno el formulario-->
     @error('nombre')
         <br>
         <small> *{{$message}}</small> 
@@ -24,7 +23,7 @@
         <br>
         Telefono: 
         <br>
-        <input type="text" name="telefono" value="{{old('telefono')}}">
+        <input type="text" name="telefono" value="{{old('telefono', $personal->telefono_personal)}}">
     </label>
     @error('telefono')
         <br>
@@ -35,7 +34,7 @@
         <br>
         Dirección: 
         <br>
-        <input type="text" name="direccion" value="{{old('direccion')}}">
+        <input type="text" name="direccion" value="{{old('direccion', $personal->direccion_personal)}}">
     </label>
     @error('direccion')
         <br>
@@ -48,7 +47,7 @@
         <br>
         <select name="tipo">
             <option value="1">Administrador</option>
-            <option value="2" selected>Mesero</option>
+            <option value="2">Mesero</option>
             <option value="3">Ayudante de Cocina</option>
             <option value="4">Cajero</option>
         </select>
@@ -74,7 +73,7 @@
     @enderror
 
     <br><br>
-    <button type="submit">Registrar</button>
+    <button type="submit">Actualizar</button>
 
     </form>
 @endsection

@@ -5,6 +5,9 @@
 @section('content')
     <h1>{{$personal->nombre_personal}}</h1>
     <a href="{{route('personal.index')}}">Volver</a>
+    <br>
+    <a href="{{route('personal.edit', $personal)}}">Editar Campos</a>
+    <br>
     <p><strong>Telefono: </strong>{{$personal->telefono_personal}}</p>
     <p><strong>Dirección: </strong>{{$personal->direccion_personal}}</p>
     <p><strong>Ocupación: </strong>{{$personal->id_tipo}}</p>

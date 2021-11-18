@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     public function index(){
-        $cliente = cliente::paginate();
+        $cliente = cliente::orderBy('id','desc')->paginate();
         return view('cliente.index', compact('cliente'));
     }
     public function create(){
@@ -23,9 +23,23 @@ class ClienteController extends Controller
         $cliente->fechaNac_cliente = $request-> FechaNac;
         $cliente->observaciones_cliente = $request-> observaciones;
         $cliente->save();
+
+        return redirect()->route('cliente.show', $cliente);
     }
-    public function show($id){
-        $cliente = cliente::find($id);
+    public function show(cliente $cliente){
         return view('cliente.show', compact(('cliente')));
+    }
+    public function edit(cliente $cliente){
+        return view('cliente.edit', compact('cliente'));
+    }
+    public function update(Request $request, cliente $cliente){
+        $cliente->nombre_cliente = $request-> nombre; //$Variable-> Atributo de BD = $Objeto -> NombreDelFormulario
+        $cliente->dirección_cliente = $request-> direccion;
+        $cliente->telefono_cliente = $request-> telefono;
+        $cliente->fechaNac_cliente = $request-> FechaNac;
+        $cliente->observaciones_cliente = $request-> observaciones;
+        $cliente->save();
+
+        return redirect()->route('cliente.show', $cliente);
     }
 }
